@@ -73,9 +73,22 @@
 
 <p>
 Welcome to <strong>M-Pesa Financial Assistant</strong> ("the App").
+</p>
+<p>
+<strong>
+**DISCLAIMER: M-Pesa Financial Assistant is an independent 
+third-party application. It is not affiliated with, endorsed 
+by, sponsored by, or in any way officially connected to 
+Safaricom PLC, M-Pesa Africa Limited, Vodacom Group, 
+or any of their subsidiaries or affiliates. 
+M-Pesa® is a registered trademark of M-Pesa Africa Limited. 
+Use of the M-Pesa name refers solely to the M-Pesa mobile 
+money service that this App is designed to work with.**
+</strong>
+</p>
+<p>
 We are committed to protecting your privacy and ensuring that your personal information is handled responsibly.
 </p>
-
 <p>
 This Privacy Policy explains what information the App collects, how it is used, how it is protected, and your rights regarding your personal information.
 </p>
@@ -100,13 +113,26 @@ If you have any questions regarding this Privacy Policy or your personal informa
 
 <h2>3. Information We Collect</h2>
 
-<h3>SMS Messages</h3>
+<h3>SMS Notification Access</h3>
 
 <p>
-The App requests permission to read SMS messages only to identify and analyze M-Pesa transaction messages for financial management purposes.
+The App uses Android's Notification Listener Service to detect 
+incoming M-Pesa transaction notifications from your default 
+SMS messaging app.
+</p>
+<p>
+The App does NOT have permission to read your SMS inbox 
+directly. It only processes notifications that are posted 
+by known SMS apps and contain both "M-PESA" and "Confirmed" 
+keywords — confirming they are genuine M-Pesa transaction 
+notifications.
 </p>
 
-<p>The App may extract information such as:</p>
+<p>Notifications from all other apps are discarded immediately 
+without any processing or storage.</p>
+
+    
+<p>The App may extract from M-Pesa notifications:</p>
 
 <ul>
 <li>Transaction date and time</li>
@@ -118,7 +144,7 @@ The App requests permission to read SMS messages only to identify and analyze M-
 </ul>
 
 <p>
-The App does not access SMS messages unrelated to financial transaction analysis.
+No other SMS or notification content is accessed or stored.
 </p>
 
 <h3>Financial Information</h3>
@@ -178,25 +204,57 @@ You may withdraw your consent at any time by revoking the App's SMS permission o
 </p>
 
 <h2>6. Data Storage</h2>
-
 <p>
-The App stores certain information locally on your device for offline functionality.
+On-Device Storage (Financial Data)
+</p>
+<p>
+All financial data — including your M-Pesa transactions, 
+manual entries, savings goals, investments, and financial 
+records — is stored exclusively on your device.
 </p>
 
 <p>
-Where cloud features are used, selected information may also be securely stored using <strong>Google Firebase</strong>, a cloud platform provided by Google LLC, to support authentication, synchronization, notifications, and secure application services.
+This data is encrypted using AES-256 encryption (SQLCipher) 
+and never transmitted to our servers or any third party.
+We have no server. We cannot access your financial data.
+</p>
+<p>
+Firebase Analytics (Usage Data Only)
+With your explicit consent during onboarding, the App sends 
+anonymous usage behavior to Google Firebase Analytics. 
+This includes which screens you visit and which features 
+you use.
 </p>
 
+<p>The following is NEVER sent to Firebase or any server:</p>
+
+<ul>
+<li>Transaction amounts or balances</li>
+<li>M-Pesa transaction codes</li>
+<li>Counterparty names or phone numbers</li>
+<li>Your savings goals or investment values</li>
+<li>Any financial figures whatsoever</li>
+</ul>
+
+<p>
+You can withdraw analytics consent at any time in 
+Settings → Profile → toggle off Analytics.
+</p>
 <h2>7. Data Sharing</h2>
 
 <p>
 We do not sell, rent, or trade your personal information.
 </p>
-
 <p>
-The App uses Google Firebase services to provide secure application functionality. Information is processed only as necessary to deliver these services.
+Where you have consented to analytics during onboarding, 
+anonymous usage behavior (screen views, feature usage — 
+never financial data) is shared with Google Firebase 
+Analytics to help us improve the App.
 </p>
-
+<p>
+Financial data is never shared with any party under 
+any circumstances.
+</p>
 <h2>8. Data Security</h2>
 
 <p>
@@ -207,6 +265,26 @@ We implement reasonable technical and organizational measures to protect your in
 However, no electronic storage method is completely secure, and we cannot guarantee absolute security.
 </p>
 
+<h2>8A. Encryption and Security</h2>
+
+<p>
+Financial Database Encryption
+</p>
+<p>
+All your financial data is stored in an AES-256 encrypted 
+database (SQLCipher) on your device. Even if someone 
+accesses your device storage directly, they cannot read 
+your financial data without the encryption key, which is 
+unique to your device and secured by Android Keystore.
+</p>
+<p>
+App Lock
+</p>
+<p>
+The App requires a 4-digit PIN or biometric authentication 
+every time it is opened, providing an additional layer of 
+protection for your financial information.
+</p>
 <h2>9. Data Retention</h2>
 
 <p>Information remains available until:</p>
@@ -241,28 +319,44 @@ We do not knowingly collect personal information from children.
 
 <h2>12. Permissions Used</h2>
 
-<h3>SMS Permission</h3>
+<h3>Notification Listener Service</h3>
 
 <p>
-Used solely to analyze M-Pesa transaction SMS messages.
+Used solely to detect M-Pesa transaction notifications 
+from your default SMS messaging app. This is NOT the 
+same as SMS read permission — the App cannot access 
+your SMS inbox. Only M-Pesa transaction notifications 
+are processed.
 </p>
 
-<h3>Notification Permission</h3>
+<h3>Biometric Permission</h3>
 
 <p>
-Used for reminders, savings alerts, budgeting notifications, and financial insights.
+Used optionally to unlock the App using your fingerprint 
+or face. Biometric data never leaves your device and is 
+managed entirely by Android's secure biometric system.
 </p>
 
 <h3>Internet Permission</h3>
 
 <p>
-Required to communicate securely with Firebase services and support application functionality.
+Required solely to communicate with Google Firebase 
+Analytics (with your consent) and to open partner 
+referral links in your browser when you tap them.
 </p>
 
 <h2>13. International Data Transfers</h2>
 
 <p>
-Where Firebase services are used, limited information may be processed on Google's secure infrastructure in accordance with applicable privacy laws and Google's privacy practices.
+Your financial data does not leave your device and 
+therefore is not subject to international transfer.
+</p>
+<p>
+Where you have consented to Firebase Analytics, 
+anonymous usage data (never financial data) may be 
+processed on Google's infrastructure internationally 
+in accordance with Google's privacy practices and 
+Standard Contractual Clauses under GDPR.
 </p>
 
 <h2>14. Changes to This Privacy Policy</h2>
@@ -296,9 +390,14 @@ If you are not satisfied with how your personal information is handled, you may 
 </p>
 
 <p>
-<strong>ODPC Registration Number:</strong> To be added once registered, if applicable.
+<strong>ODPC Registration Number:</strong> Application submitted July 2026.
 </p>
-
+<p>
+Registration number will be added upon receipt of 
+certificate from the Office of the Data Protection 
+Commissioner.
+</p>
+    
 <footer>
 © 2026 Sadhana Technologies Limited. All rights reserved.
 </footer>
